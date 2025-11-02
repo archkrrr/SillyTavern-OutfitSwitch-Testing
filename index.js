@@ -991,7 +991,7 @@ async function populateBuildMeta() {
         return;
     }
 
-    const fallbackNote = "A streamlined, single-character variant of Costume Switcher with automatic keyword triggers and manual overrides.";
+    const fallbackNote = "";
 
     try {
         const manifestUrl = new URL("./manifest.json", import.meta.url);
