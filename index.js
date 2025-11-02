@@ -1015,12 +1015,7 @@ async function populateBuildMeta() {
             versionEl.removeAttribute("aria-label");
         }
 
-        const description = typeof manifest?.description === "string" ? manifest.description.trim() : "";
-        if (description) {
-            noteEl.textContent = description;
-        } else {
-            noteEl.textContent = fallbackNote;
-        }
+        noteEl.textContent = fallbackNote;
     } catch (error) {
         console.warn(`${logPrefix} Unable to populate build metadata`, error);
         versionEl.textContent = "Outfit Switcher";
