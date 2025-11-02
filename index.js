@@ -991,7 +991,7 @@ async function populateBuildMeta() {
         return;
     }
 
-    const fallbackNote = "Outfit Switcher is an early preview extension. Expect rough edges, limited functionality, and breaking changes as the system evolves.";
+    const fallbackNote = "A streamlined, single-character variant of Costume Switcher with automatic keyword triggers and manual overrides.";
 
     try {
         const manifestUrl = new URL("./manifest.json", import.meta.url);

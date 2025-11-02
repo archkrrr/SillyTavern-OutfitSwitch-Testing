@@ -1,13 +1,13 @@
 {
     "name": "Outfit Switcher",
     "title": "Outfit Switcher",
-    "description": "Outfit Switcher is an early preview extension. Expect rough edges, limited functionality, and breaking changes as the system evolves.",
+    "description": "A streamlined, single-character variant of Costume Switcher with automatic keyword triggers and manual overrides.",
     "display_name": "Outfit Switcher",
     "loading_order": 10,
     "js": "index.js",
     "css": "style.css",
     "author": "Archkr",
-    "version": "0.5.0",
+    "version": "1.0.0",
     "auto_update": true,
     "homePage": "https://github.com/archkrrr/SillyTavern-OutfitSwitch",
     "i18n": {}
