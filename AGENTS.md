@@ -10,4 +10,4 @@
 
 - `SillyTavern-CostumeSwitch/` is my main extension, use it for reference for things like layout and UI.
 - Do not change anything in `SillyTavern-CostumeSwitch/`.
-  `ST-Helpers/` is a library released to the public for extension developers, it is to only be used to help with the development of Outfit Switcher
+  `ST-Helpers/` is a library released to the public for extension developers, it is to only be used to help with the development of Outfit Switcher. It is for reference only, and not to be edited.
