@@ -57,3 +57,26 @@ test("object-based slash command signature receives empty alias list", () => {
     assert.equal(entry.options.hidden, false);
     assert.deepEqual(entry.options.aliases, []);
 });
+
+test("object signature gracefully falls back when registrar expects legacy args", () => {
+    const registration = createOutfitSlashCommandRegistration(async () => "ok");
+    const calls = [];
+
+    function legacyDefaultRegister(name, handler, args = [], description = "", hidden = false, alias = null) {
+        if (!Array.isArray(args)) {
+            args.find(() => true);
+        }
+
+        calls.push({ name, handler, args, description, hidden, alias });
+    }
+
+    applySlashCommandRegistration(legacyDefaultRegister, registration);
+
+    assert.equal(calls.length, 1);
+    const entry = calls[0];
+    assert.equal(entry.name, registration.name);
+    assert.deepEqual(entry.args, registration.args);
+    assert.equal(entry.description, registration.description);
+    assert.equal(entry.hidden, false);
+    assert.equal(entry.alias, null);
+});
