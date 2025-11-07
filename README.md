@@ -134,6 +134,8 @@ If a trigger does not fire, open the browser console for detailed logs that show
 | --- | --- |
 | `/outfitswitch <trigger>` | Launches the outfit mapped to `<trigger>`. Unknown triggers or disabled states are safely ignored. |
 
+> **Note:** `/trigger` remains the built-in STScript command in SillyTavern. Outfit Switcher only registers `/outfitswitch` and does not claim any aliases.
+
 ---
 
 ## Troubleshooting Checklist

@@ -5,6 +5,7 @@ import {
     OUTFIT_SLASH_ARGUMENTS,
     OUTFIT_SLASH_COMMAND,
     OUTFIT_SLASH_DESCRIPTION,
+    OUTFIT_SLASH_ALIASES,
     getOutfitSlashCommandConfig,
     isOutfitActionVerb,
 } from "../src/verbs.js";
@@ -21,8 +22,10 @@ test("slash command config targets outfit switching", () => {
     assert.equal(config.name, OUTFIT_SLASH_COMMAND);
     assert.deepEqual(config.args, OUTFIT_SLASH_ARGUMENTS);
     assert.equal(config.description, OUTFIT_SLASH_DESCRIPTION);
+    assert.deepEqual(config.aliases, OUTFIT_SLASH_ALIASES);
     assert.equal(config.name, "outfitswitch");
     assert.deepEqual(config.args, ["trigger"]);
     assert.ok(config.description.includes("focus character"));
     assert.equal(config.description.toLowerCase().includes("speaker"), false);
+    assert.deepEqual(config.aliases, []);
 });
