@@ -34,6 +34,17 @@ export function applySlashCommandRegistration(registrar, registration) {
     const aliasList = Array.isArray(registration.aliases) ? registration.aliases : [];
     const legacyAlias = aliasList.length ? aliasList : null;
 
+    const callLegacySignature = () => {
+        registrar(
+            registration.name,
+            registration.handler,
+            registration.args,
+            registration.description,
+            false,
+            legacyAlias,
+        );
+    };
+
     if (registrar.length <= 3) {
         const options = {
             args: registration.args,
@@ -42,16 +53,19 @@ export function applySlashCommandRegistration(registrar, registration) {
             aliases: aliasList,
         };
 
-        registrar(registration.name, registration.handler, options);
+        try {
+            registrar(registration.name, registration.handler, options);
+            return;
+        } catch (error) {
+            const message = String(error?.message ?? "");
+            if (!(error instanceof TypeError) || !message.includes("find is not a function")) {
+                throw error;
+            }
+        }
+
+        callLegacySignature();
         return;
     }
 
-    registrar(
-        registration.name,
-        registration.handler,
-        registration.args,
-        registration.description,
-        false,
-        legacyAlias,
-    );
+    callLegacySignature();
 }
