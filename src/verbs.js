@@ -11,11 +11,13 @@ export function isOutfitActionVerb(value) {
 export const OUTFIT_SLASH_COMMAND = "outfitswitch";
 export const OUTFIT_SLASH_ARGUMENTS = Object.freeze(["trigger"]);
 export const OUTFIT_SLASH_DESCRIPTION = "Switch the focus character's outfit using a saved trigger.";
+export const OUTFIT_SLASH_ALIASES = Object.freeze([]);
 
 export function getOutfitSlashCommandConfig() {
     return {
         name: OUTFIT_SLASH_COMMAND,
         args: OUTFIT_SLASH_ARGUMENTS,
         description: OUTFIT_SLASH_DESCRIPTION,
+        aliases: OUTFIT_SLASH_ALIASES,
     };
 }
