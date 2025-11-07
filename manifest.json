@@ -1,13 +1,13 @@
 {
-    "name": "Outfit Switcher",
-    "title": "Outfit Switcher",
+    "name": "Outfit Switcher Testing",
+    "title": "Outfit Switcher Testing",
     "description": "A streamlined, single-character variant of Costume Switcher with automatic keyword triggers and manual overrides.",
     "display_name": "Outfit Switcher",
     "loading_order": 10,
     "js": "index.js",
     "css": "style.css",
     "author": "Archkr",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "auto_update": true,
     "homePage": "https://github.com/archkrrr/SillyTavern-OutfitSwitch",
     "i18n": {}
