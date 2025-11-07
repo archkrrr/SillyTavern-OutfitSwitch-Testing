@@ -25,7 +25,8 @@ test("slash command config targets outfit switching", () => {
     assert.deepEqual(config.aliases, OUTFIT_SLASH_ALIASES);
     assert.equal(config.name, "outfitswitch");
     assert.deepEqual(config.args, ["trigger"]);
-    assert.ok(config.description.includes("focus character"));
+    assert.equal(OUTFIT_SLASH_DESCRIPTION, "Manually activate an Outfit Switcher trigger by name.");
+    assert.ok(config.description.includes("Outfit Switcher trigger"));
     assert.equal(config.description.toLowerCase().includes("speaker"), false);
     assert.deepEqual(config.aliases, []);
 });
